@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.syscli/algeria-mcp",
+  "title": "Algeria",
+  "description": "Algeria's 69 wilayas and 1541 communes, GPS lookups, and checks for Algerian formats.",
+  "repository": {
+    "url": "https://github.com/syscli/algeria-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@syscli/algeria-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
