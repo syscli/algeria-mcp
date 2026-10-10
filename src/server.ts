@@ -2,7 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import type { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
 import { changes, commune, communes, search, wilaya, type Commune } from "@syscli/algeria";
 import { communeAt, wilayaAt } from "@syscli/algeria/geo";
-import { ccp, phone, plate, rib, rip } from "@syscli/dz-format";
+import { ccp, nif, nin, nis, phone, plate, postalCode, rc, rib, rip } from "@syscli/dz-format";
 import { commune as checkCommune, wilaya as checkWilaya } from "@syscli/dz-format/place";
 import { z } from "zod";
 
@@ -176,10 +176,11 @@ export function createServer(): McpServer {
       description:
         "Checks that a value is well formed and returns its parts, or the reason it is not. Kinds: phone " +
         "(mobile, landline, VoIP), rib (any bank, 20 digits), rip (Algerie Poste RIP), ccp (account number, " +
-        "with 'key' to check), plate (vehicle plate), wilaya, commune (with 'wilaya' to pick among shared " +
-        "names). Well formed does not mean the account or line exists.",
+        "with 'key' to check), plate (vehicle plate), postal (postal code), nin, nif, nis, rc (registre du " +
+        "commerce number), wilaya, commune (with 'wilaya' to pick among shared names). Well formed does not " +
+        "mean the account, line or company exists; NIN, NIF, NIS and RC have no public check key.",
       inputSchema: {
-        kind: z.enum(["phone", "rib", "rip", "ccp", "plate", "wilaya", "commune"]),
+        kind: z.enum(["phone", "rib", "rip", "ccp", "plate", "postal", "nin", "nif", "nis", "rc", "wilaya", "commune"]),
         value: z.string().min(1),
         key: z.string().optional().describe("For ccp: the two-digit key to check"),
         wilaya: z.string().optional().describe("For commune: the wilaya, by code or name"),
@@ -198,6 +199,16 @@ export function createServer(): McpServer {
           return json(ccp(value, key));
         case "plate":
           return json(plate(value));
+        case "postal":
+          return json(postalCode(value));
+        case "nin":
+          return json(nin(value));
+        case "nif":
+          return json(nif(value));
+        case "nis":
+          return json(nis(value));
+        case "rc":
+          return json(rc(value));
         case "wilaya":
           return json(checkWilaya(value));
         case "commune":

@@ -1,6 +1,7 @@
 {
   "name": "@syscli/algeria-mcp",
   "version": "0.1.0",
+  "mcpName": "io.github.syscli/algeria-mcp",
   "description": "MCP server for Algeria's wilayas and communes: search, lookups, GPS points, the 2019 and 2026 reforms, and checks for Algerian formats.",
   "type": "module",
   "license": "MIT",
@@ -44,7 +45,7 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1",
     "@syscli/algeria": "^0.2.0",
-    "@syscli/dz-format": "^0.1.0",
+    "@syscli/dz-format": "^0.2.0",
     "zod": "^4.6.5"
   },
   "devDependencies": {

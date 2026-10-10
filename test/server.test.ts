@@ -78,6 +78,9 @@ describe("server", () => {
     expect((await call("validate", { kind: "ccp", value: "200", key: "13" })).data.reason).toBe("key");
     expect((await call("validate", { kind: "commune", value: "El Marsa" })).data.reason).toBe("ambiguous");
     expect((await call("validate", { kind: "commune", value: "El Marsa", wilaya: "16" })).data.valid).toBe(true);
+    expect((await call("validate", { kind: "postal", value: "16024" })).data).toMatchObject({ valid: true, wilaya: "16" });
+    expect((await call("validate", { kind: "rc", value: "01B 0015609-16/00" })).data.canonical).toBe("16/00-0015609 B 01");
+    expect((await call("validate", { kind: "nif", value: "00021600180833716001" })).data.establishment).toBe("16001");
   });
 
   it("rejects bad arguments", async () => {
