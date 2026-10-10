@@ -13,6 +13,8 @@ Ask your assistant things like:
 
 ## Setup
 
+Also listed in the official MCP Registry as `io.github.syscli/algeria-mcp`.
+
 Claude Code:
 
 ```sh
@@ -44,7 +46,7 @@ calls: all the data ships with the package.
 | `get_commune` | a commune by ONS code, with its wilaya under the 69, 58 and 48 maps |
 | `wilaya_changes` | communes moved by the 2026 or 2019 reform |
 | `locate_point` | the commune and wilaya of a GPS point |
-| `validate` | check a phone number, RIB, RIP, CCP, vehicle plate, wilaya or commune |
+| `validate` | check a phone number, RIB, RIP, CCP, plate, postal code, NIN, NIF, NIS, RC, wilaya or commune |
 
 All tools are read-only.
 
