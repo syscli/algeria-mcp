@@ -1,0 +1,56 @@
+{
+  "name": "@syscli/algeria-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Algeria's wilayas and communes: search, lookups, GPS points, the 2019 and 2026 reforms, and checks for Algerian formats.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Sysserv <me@sysserv.eu.org>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syscli/algeria-mcp.git"
+  },
+  "homepage": "https://github.com/syscli/algeria-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/syscli/algeria-mcp/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "algeria-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.check.json",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "algeria",
+    "algerie",
+    "wilaya",
+    "commune",
+    "dz"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@syscli/algeria": "^0.2.0",
+    "@syscli/dz-format": "^0.1.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
+  }
+}
