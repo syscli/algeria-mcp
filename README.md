@@ -1,5 +1,7 @@
 # algeria-mcp
 
+[![npm](https://img.shields.io/npm/v/@syscli/algeria-mcp)](https://www.npmjs.com/package/@syscli/algeria-mcp) [![CI](https://github.com/syscli/algeria-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/syscli/algeria-mcp/actions/workflows/ci.yml)
+
 An MCP server that lets AI assistants answer questions about Algeria's 69
 wilayas and 1541 communes from the Journal officiel, and check Algerian
 formats such as phone numbers and RIP keys.
@@ -58,6 +60,14 @@ All tools are read-only.
   CC BY-SA 2.0. (c) OpenStreetMap contributors.
 - Format rules: [@syscli/dz-format](https://github.com/syscli/dz-format), with
   the source of each rule.
+
+## Related projects
+
+| project | what | get it |
+|---|---|---|
+| [algeria](https://github.com/syscli/algeria) | the 69 wilayas and 1541 communes, search, GPS lookups | npm `@syscli/algeria`, PyPI `syscli-algeria`, site [AlgerieGeo](https://syscli.github.io/algeria/) |
+| [dz-format](https://github.com/syscli/dz-format) | checks for phone numbers, RIP and RIB keys, plates, NIF, RC and more | npm `@syscli/dz-format`, PyPI `dz-format`, [playground](https://syscli.github.io/dz-format/) |
+| [algeria-mcp](https://github.com/syscli/algeria-mcp) | both of the above for AI assistants | npm `@syscli/algeria-mcp`, MCP Registry `io.github.syscli/algeria-mcp` |
 
 ## Releases and security
 
